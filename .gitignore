@@ -9,7 +9,6 @@ lerna-debug.log*
 
 node_modules
 dist
-dist-ssr
 *.local
 
 # Editor directories and files
@@ -22,8 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-data/.~lock.*
 
 .yarn/cache
 .yarn/install-state.gz
