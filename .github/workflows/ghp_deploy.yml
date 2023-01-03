@@ -18,7 +18,7 @@ jobs:
           cache: "yarn"
       - name: Install
         run: |
-          yarn install --dev
+          yarn install
       - name: Build
         run: |
           yarn build
