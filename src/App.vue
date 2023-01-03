@@ -49,10 +49,11 @@ function onClickBandName(name: string) {
       <li
         v-for="name in state.names"
         :key="name"
-        :class="{ 'm-copied': name === state.copiedName }"
         @click="onClickBandName(name)"
       >
         {{ name }}
+        <aside class="m-copied" v-if="name === state.copiedName">copied</aside>
+        <aside v-if="name !== state.copiedName">copy</aside>
       </li>
     </ul>
     <div>
@@ -106,7 +107,7 @@ function onClickBandName(name: string) {
   border-radius: 4px;
 }
 
-.App li::after {
+.App li aside {
   transition-duration: 3s;
   opacity: 1;
 
@@ -115,25 +116,20 @@ function onClickBandName(name: string) {
   right: 0;
   font-size: 0.8rem;
   color: gray;
+
+  display: block;
+  float: right;
+
+  visibility: hidden;
+}
+.App li aside.m-copied,
+.App li:hover aside {
+  visibility: visible;
 }
 
 .App li:hover {
   cursor: pointer;
 
   background-color: var(--bg-2);
-}
-
-.App li:hover::after {
-  display: block;
-  float: right;
-  content: "copy";
-}
-
-.App li.m-copied::after {
-  display: block;
-  float: right;
-  content: "copied!";
-
-  opacity: 0;
 }
 </style>
