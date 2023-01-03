@@ -1,0 +1,76 @@
+/* CSS Micro Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+}
+
+img,
+iframe {
+  border: 0;
+}
+
+/* Styles */
+
+body {
+  --bg-1: white;
+  --bg-2: rgba(0, 0, 0, 0.03);
+
+  --accent-1: #8000ff;
+  --accent-2: #400088;
+
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header,
+footer {
+  width: 100%;
+}
+
+main {
+  max-width: 1400px;
+
+  padding: 0 1rem;
+}
+
+a {
+  color: var(--accent-1);
+}
+
+a:visited {
+  color: var(--accent-2);
+}
+
+#section-top {
+  border-bottom: 1px solid var(--accent-2);
+  margin-bottom: 1rem;
+}
