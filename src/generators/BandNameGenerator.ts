@@ -54,37 +54,28 @@ export default class BandNameGenerator extends AbstractGenerator {
         "#noun# of #adjective# #noun.s#",
         "#noun# for the #noun#",
         "#noun# for the #noun# #noun#",
+        "#noun.s# and #noun.s#",
         "#preposition# the #noun#",
         "#preposition# #noun#",
         "#preposition# the #adjective# #noun#",
         "#adjective# #noun#",
-        "#adjective# #noun#",
-        "#noun#",
-        "#noun#",
-        "#noun.s#",
-        "#noun.s#",
-        "#adjective# #noun#",
-        "#adjective# #noun#",
         "#adjective# #adjective# #noun#",
         "#noun#",
-        "#noun#",
-        "#noun.s#",
         "#noun.s#",
         "#letter##letter##letter#",
         "the #adjective# #noun.s#",
-
         "#noun#/#noun#",
         "#noun#-#noun#",
         "#noun# of #noun#",
-
         "#adjective# #person#",
         "#person# the #noun#",
         "#person# and the #noun#",
         "#person# and the #adjective# #noun.s#",
-
         "#person# & #person#",
         "#person#",
         "the #person.s#",
+        "#adjective# #pronoun#",
+        "#noun# #preposition# #pronoun#",
       ],
       letter: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
       adjective: load(englishAdjectives),
@@ -162,6 +153,7 @@ export default class BandNameGenerator extends AbstractGenerator {
         "within",
         "without",
       ],
+      pronoun: ["I", "me", "you", "they", "him", "her", "he", "she"],
     });
     this.g.addModifiers(baseEngModifiers);
   }
@@ -303,11 +295,11 @@ export default class BandNameGenerator extends AbstractGenerator {
       !hasPunc &&
       style !== "uppercase_dots" &&
       style !== "lowercase_dots" &&
-      randomPass(0.01)
+      randomPass(0.02)
     ) {
       str = str
         .split(" ")
-        .map((s) => s + choice(["!", "?", "", "", ""]))
+        .map((s) => s + choice(["!", "!", "?", "", "", "", "", ""]))
         .join(" ");
     }
 
